@@ -21,15 +21,17 @@
 
             }
         }
+        //função para exibir o resultado 
         function resultado(){
             if(httpObject.readyState==4){
                 document.getElementById('retorno').value=httpObject.responseText;
             }
         }
+        // função para mandar os valores de string e converte-las em maiusculo 
         function envia(){
             httpObject=getHTTPobject();
             if(httpObject != null){
-                httpObject.open("GET","maiuscula.php?entrada="+documentd.getElementById('entrada').value,true);
+                httpObject.open("GET","maiuscula.php?entrada="+document.getElementById('entrada').value,true);
                 httpObject.send(null);
                 httpObject.onreadystatechange=resultado;
 
